@@ -81,10 +81,9 @@ class VideoPlayer extends Component {
     const { video } = this.state;
     const newTime = (e.nativeEvent.offsetX / video.clientWidth) * video.duration;
     if (!isNaN(newTime)) {
-      this.player.currentTime = video.duration * newTime / 100;
+      this.player.currentTime = newTime;
     }
   }
-
 
   render() {
     return (
@@ -92,12 +91,12 @@ class VideoPlayer extends Component {
         <h2>{this.props.selectedVideo.videoTitle}</h2>
         <video id="video" ref={(player) => this.player = player} autoPlay="true"></video>
         <div id="video-controls" className="controls">
-          <button id="play-pause" type="button" className='btn' onClick={this.togglePlay}><i className={`fa fa-${this.state.playPause}`}></i></button>
-          <div className="progress">
-              <progress onClick={this.updateProgress} id="progress" min="0" max="100" value={this.state.percent}>
-                <span id="progress-bar"></span>
-              </progress>
+          <div id="progress">
+            <progress onClick={this.updateProgress} id="progress" min="0" max="100" value={this.state.percent}>
+              <span id="progress-bar"></span>
+            </progress>
           </div>
+          <button id="play-pause" type="button" className='btn' onClick={this.togglePlay}><i className={`fa fa-${this.state.playPause}`}></i></button>
           <div id="time-bar">{`${this.state.time}/${this.state.duration}`}</div>
         </div>
       </div>

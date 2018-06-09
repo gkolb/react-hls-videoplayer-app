@@ -24,3 +24,23 @@ video {
     background-size: cover;
 }
 
+progress {
+  width: 100%;
+}
+/* #progress {
+  background: #333;
+  border-radius: 13px;
+  height: 20px;
+  width: vw;
+  padding: 3px;
+}
+
+#progress:after {
+  content: '';
+  display: block;
+  background: orange;
+  width: 25%;
+  height: 100%;
+  border-radius: 9px;
+} */
+
