@@ -26,7 +26,7 @@ class App extends Component {
     const { videos, selectedVideo } = this.state;
 
     return (
-      <div className="App">
+      <div className="App wrapper">
         <VideoPlayer selectedVideo={selectedVideo}/>
         <VideoList videos={videos} handleVideoItemClick={this.handleVideoItemClick}/>
       </div>

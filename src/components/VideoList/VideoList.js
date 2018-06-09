@@ -3,14 +3,16 @@ import VideoListItem from '../VideoListItem/VideoListItem'
 
 const VideoList = ( {videos, handleVideoItemClick} ) => {
   return (
-    <div>
-      <div>VideoList</div>
-      {videos.map((video) => (
-        <VideoListItem 
-          video={video}
-          handleVideoItemClick={handleVideoItemClick}
-          key={video.videoTitle}/>
-      ))}
+    <div className="video-list">
+      <div>
+        {videos.map((video) => (
+          <VideoListItem 
+            className="item"
+            video={video}
+            handleVideoItemClick={handleVideoItemClick}
+            key={video.videoTitle}/>
+        ))}
+      </div>
     </div>
   )
 }

@@ -10,3 +10,17 @@
   margin: 4px 2px;
   border-radius: 16px;
 }
+
+
+.player {
+  grid-column: 1 / 4 ;
+}
+
+video {
+    position: relative;
+    float: left;
+    width: 100%;
+    background: repeating-linear-gradient(to right, #f6ba52, #f6ba52 10px, #ffd180 10px, #ffd180 20px);
+    background-size: cover;
+}
+

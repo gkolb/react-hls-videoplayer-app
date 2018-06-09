@@ -70,9 +70,10 @@ class VideoPlayer extends Component {
   togglePlay() {
     const { video } = this.state;
     const method = video.paused ? 'play' : 'pause';
+    const playPause = video.paused ? 'pause' : 'play';
     video[method]();
     this.setState({
-      playPause: method
+      playPause: playPause
     })
   }
 
@@ -87,10 +88,10 @@ class VideoPlayer extends Component {
 
   render() {
     return (
-      <div>
+      <div id="player" className="player">
         <h2>{this.props.selectedVideo.videoTitle}</h2>
-        <video height="600" id="video" ref={(player) => this.player = player} autoPlay="true"></video>
-        <div id="video-controls">
+        <video id="video" ref={(player) => this.player = player} autoPlay="true"></video>
+        <div id="video-controls" className="controls">
           <button id="play-pause" type="button" className='btn' onClick={this.togglePlay}><i className={`fa fa-${this.state.playPause}`}></i></button>
           <div className="progress">
               <progress onClick={this.updateProgress} id="progress" min="0" max="100" value={this.state.percent}>
